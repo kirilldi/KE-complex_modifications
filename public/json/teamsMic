@@ -1,0 +1,32 @@
+{
+  "title": "Enable microphone shortcut for Microsoft teams",
+  "rules": [
+    {
+      "description": "Changes right CMD to CMD+SHIFT+M when Microsoft Teams app is in front",
+      "manipulators": [
+        {
+          "from": {
+            "key_code": "right_command"
+          },
+          "to": [
+            {
+              "key_code": "right_command",
+              "modifiers": [
+                "left_shift","m"
+              ]
+            }
+          ],
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^com.microsoft.teams"
+              ]
+            }
+          ],
+          "type": "basic"
+        }
+      ]
+    }
+  ]
+}
